@@ -18,6 +18,8 @@ public class RobotTest {
     @Test
     public void packagingWithWordingArticles() throws ArticleDoesntFitException {
         assertThat(robot.packaging(robot.listToMap(givenArticlesFromWording())).getNumberOfBoxesUsed(), is(8));
+        assertThat(robot.packaging(robot.listToMap(givenArticlesFromWording())).getStringResult(), is("91/82/81/73/73/64/6/55"));
+
     }
 
     @Test
