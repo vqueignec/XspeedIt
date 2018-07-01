@@ -12,11 +12,6 @@ public class Box {
     private ArrayList<Integer> articles = new ArrayList<>();
     private int freePlace = Constants.MAX_BOX_SIZE;
 
-    private int getUsedPlace(){
-        return articles.stream().mapToInt(value -> value).sum();
-    }
-
-
     private boolean doesArticleFit(int article){
         return getFreePlace() >= article;
     }
