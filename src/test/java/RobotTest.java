@@ -1,3 +1,4 @@
+import exceptions.ArticleDoesntFitException;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -15,8 +16,8 @@ public class RobotTest {
     private Robot robot = new Robot();
 
     @Test
-    public void packagingWithWordingArticles() {
-        assertFalse(true);
+    public void packagingWithWordingArticles() throws ArticleDoesntFitException {
+        assertThat(robot.packaging(robot.listToMap(givenArticlesFromWording())).getNumberOfBoxesUsed(), is(8));
     }
 
     @Test
