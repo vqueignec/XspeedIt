@@ -15,6 +15,6 @@ public class Robot {
     }
 
     private Map<Integer, Integer> initializeArticleMap() {
-        return IntStream.range(1, 10).boxed().collect(Collectors.toMap(article -> article , article -> 0));
+        return IntStream.range(1, Constants.BASE_ARTICLE_MAX_SIZE + 1).boxed().collect(Collectors.toMap(article -> article, article -> 0));
     }
 }
