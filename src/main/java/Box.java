@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class Box {
 
     private ArrayList<Integer> articles = new ArrayList<>();
-    private int freePlace = 10;
+    private int freePlace = Constants.MAX_BOX_SIZE;
 
     private int getUsedPlace(){
         return articles.stream().mapToInt(value -> value).sum();
