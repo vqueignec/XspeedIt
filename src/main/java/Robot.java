@@ -45,14 +45,33 @@ public class Robot {
     }
 
     private Box fillTheBox(Map<Integer, Integer> articles, Box box) throws ArticleDoesntFitException {
-        int complement = box.getFreePlace();
-        while (complement > 0) {
+        Integer complement = box.getFreePlace();
+        /*while (complement > 0) {
             if (hasArticle(articles, complement) && box.getFreePlace() > 0) {
                 movingArticle(articles, complement, box);
                 fillTheBox(articles, box);
-            }
+                complement = box.getFreePlace();
+            }else
             complement--;
+        }*/
+        if (hasArticle(articles, complement) && box.getFreePlace() > 0) {
+            movingArticle(articles, complement, box);
+            complement = box.getFreePlace();
         }
-        return box;
+        return
+                fillTheBoxRec(articles, box, complement);
+    }
+
+    private Box fillTheBoxRec(Map<Integer, Integer> articles, Box box, int complement) throws ArticleDoesntFitException {
+        if(complement > 0){
+            if (hasArticle(articles, complement)) {
+                movingArticle(articles, complement, box);
+                complement = box.getFreePlace();
+            }else{
+                complement--;
+            }
+            return fillTheBoxRec(articles, box, complement);
+        }else
+            return box;
     }
 }
