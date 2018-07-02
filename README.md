@@ -22,9 +22,7 @@ Résolution de l'exercice XSpeedIt pour l'entretien technique de Voyages SNCF (0
 ## Points notables
 
 * Le programme n'a pas de main => maven test ou lancement unitaire des méthodes de test.
-* La branche Benchmark n'est pas mergée, checkout pour tester sur une plus grosse volumétrie.<br/>
-  -> les méthodes de benchmark lèvent l'exception ArticleDoesntFitException aléatoirement ?! Root cause pas encore définie.<br/>
-  -> Résultats moyens sur ma machine :<br/>
+  -> Résultats moyens des benchmarks sur ma machine :<br/>
         1K elements = 0ms<br/>
         10K elements = 7 ms<br/>
         100K elements = 10 ms<br/>
